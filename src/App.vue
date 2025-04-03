@@ -3,22 +3,9 @@
 </script>
 
 <template>
-  <div class="app">
-    <main class="main-content">
-      <router-view></router-view>
-    </main>
-  </div>
+  <main class="main-content">
+    <router-view></router-view>
+  </main>
 </template>
 
-<style>
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.main-content {
-  flex: 1;
-  padding: 1rem;
-}
-</style>
+<style></style>
