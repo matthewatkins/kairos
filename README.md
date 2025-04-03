@@ -1,14 +1,8 @@
-# Energy Dashboard
+# Kairos Timekeeper Dashboard
 
-A Vue 3 dashboard application for monitoring energy usage and efficiency metrics.
+Kairos is an AI enhanced timekeeping application that differentiates itself by using energy levels as it's main mechanic.
 
 ## Features
-
-- Real-time energy usage monitoring
-- Efficiency metrics tracking
-- Cost savings visualization
-- Recent activity feed
-- Responsive design
 
 ## Tech Stack
 
@@ -17,6 +11,8 @@ A Vue 3 dashboard application for monitoring energy usage and efficiency metrics
 - Pinia for state management
 - Vue Router for navigation
 - Vite for build tooling
+- Tailwind CSS for styling
+- Reka UI for unstyled headless components
 
 ## Getting Started
 
