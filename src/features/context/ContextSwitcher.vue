@@ -3,14 +3,15 @@ import { computed } from 'vue';
 import Button from '@/components/Button.vue';
 import { useContextStore } from '@/stores/context';
 import { Briefcase, Home } from 'lucide-vue-next';
-import type { Context } from '@/stores/context';
+import type { Context } from '@/features/context/context';
+import { contextValues } from '@/features/context/context';
 
 const contextStore = useContextStore();
 const contexts = computed(() => contextStore.contexts);
 
 const icons = {
-  personal: Home,
-  work: Briefcase,
+  [contextValues.personal]: Home,
+  [contextValues.work]: Briefcase,
 };
 </script>
 

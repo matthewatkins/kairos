@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
-
-export type Context = 'work' | 'personal';
+import type { Context } from '@/features/context/context';
+import { contextLabels, contextValues, contextDescriptions } from '@/features/context/context';
 
 interface ContextState {
   current: Context;
@@ -19,24 +19,24 @@ interface ContextState {
 
 export const useContextStore = defineStore('context', {
   state: (): ContextState => ({
-    current: 'work',
+    current: contextValues.work,
     date: new Date(),
     contexts: {
       work: {
-        name: 'Work',
-        description: 'Professional tasks and work-related activities',
+        name: contextLabels.work,
+        description: contextDescriptions.work,
       },
       personal: {
-        name: 'Personal',
-        description: 'Personal life and non-work activities',
+        name: contextLabels.personal,
+        description: contextDescriptions.personal,
       },
     },
   }),
 
   getters: {
     currentContext: state => state.contexts[state.current],
-    isWork: state => state.current === 'work',
-    isPersonal: state => state.current === 'personal',
+    isWork: state => state.current === contextValues.work,
+    isPersonal: state => state.current === contextValues.personal,
   },
 
   actions: {
@@ -53,8 +53,8 @@ export const useContextStore = defineStore('context', {
       const day = new Date().getDay();
 
       // After 6 PM, switch to personal context
-      if (hour >= 18 && this.current === 'work') {
-        this.setContext('personal');
+      if (hour >= 18 && this.current === contextValues.work) {
+        this.setContext(contextValues.personal);
       }
       // Between 9 AM and 6 PM on weekdays, switch to work context
       else if (
@@ -62,9 +62,9 @@ export const useContextStore = defineStore('context', {
         hour < 18 &&
         day !== 0 && // Not Sunday
         day !== 6 && // Not Saturday
-        this.current === 'personal'
+        this.current === contextValues.personal
       ) {
-        this.setContext('work');
+        this.setContext(contextValues.work);
       }
     },
   },
