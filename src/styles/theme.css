@@ -1,4 +1,5 @@
 @theme {
+  /* Colors */
   --color-gray-darkest: #1e1e1e;
   --color-gray-dark: #2e2e2e;
   --color-gray-medium: #d6d6d6;
@@ -8,7 +9,14 @@
   --color-black: var(--color-gray-darkest);
   --color-white: var(--color-gray-lightest);
 
+  /* Energy colors */
   --color-energy-high: #fd9a00;
   --color-energy-medium: #6100fd;
   --color-energy-low: #0dc262;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px 0px rgba(0, 0, 0, 0.15);
+
+  /* breakpoints */
+  --breakpoint-md: 900px;
 }
