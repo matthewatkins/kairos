@@ -1,11 +1,11 @@
 <script setup lang="ts">
-// App-level logic will go here
+import AppContext from '@/features/context/AppContext.vue';
 </script>
 
 <template>
-  <main class="main-content">
+  <AppContext>
     <router-view></router-view>
-  </main>
+  </AppContext>
 </template>
 
 <style></style>
