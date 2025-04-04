@@ -1,14 +1,7 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import { useDashboardStore } from '@/stores/dashboard';
 import Panel from '@/components/Panel.vue';
 import ContextSwitcher from '@/features/context/ContextSwitcher.vue';
-
-const dashboardStore = useDashboardStore();
-
-onMounted(async () => {
-  await dashboardStore.fetchDashboardData();
-});
+import TaskList from '@/features/tasks/TasksList.vue';
 </script>
 
 <template>
@@ -39,7 +32,7 @@ onMounted(async () => {
     </Panel>
 
     <Panel class="tasks">
-      <h2 class="text-xl font-bold">Tasks</h2>
+      <TaskList />
     </Panel>
 
     <div class="footer p-4 text-sm text-gray-500 text-center">
@@ -61,8 +54,8 @@ onMounted(async () => {
   @media (min-width: 900px) {
     display: grid;
     grid-template-columns: var(--columns);
-    grid-template-rows: 0.3fr 0.5fr 1fr 1fr 0.5fr;
-    grid-auto-rows: 1fr;
+    /* grid-template-rows: 0.3fr 0.5fr 1fr 1fr 0.5fr; */
+    /* grid-auto-rows: 1fr; */
     grid-auto-flow: column;
     grid-template-areas:
       'header header'
