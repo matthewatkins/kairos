@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useContextStore } from '@/features/context/store';
+import { useEnergyStore } from '@/features/energy/store';
 import { contextValues } from '@/features/context/context';
 import { Clock } from 'lucide-vue-next';
 import Panel from '@/components/Panel.vue';
 
 const contextStore = useContextStore();
+const energyStore = useEnergyStore();
 const now = ref(new Date());
 let timer: number;
 
@@ -13,6 +15,7 @@ let timer: number;
 onMounted(() => {
   timer = window.setInterval(() => {
     now.value = new Date();
+    energyStore.updateCurrentTime();
   }, 1000);
 });
 
@@ -50,56 +53,26 @@ const timeUntilEndOfWork = computed(() => {
 
   return { hours, minutes };
 });
-
-interface EnergyInfo {
-  level: 'energy-high' | 'energy-medium' | 'energy-low';
-  message: string;
-}
-
-const energyInfo = computed<EnergyInfo>(() => {
-  const hour = now.value.getHours();
-
-  if (hour >= 9 && hour < 12) {
-    return {
-      level: 'energy-high',
-      message: 'High energy - ideal for focused work',
-    };
-  } else if (hour >= 12 && hour < 14) {
-    return {
-      level: 'energy-medium',
-      message: 'Medium energy - good for meetings',
-    };
-  } else if (hour >= 14 && hour < 16) {
-    return {
-      level: 'energy-low',
-      message: 'Lower energy - take breaks',
-    };
-  } else if (hour >= 16 && hour < 19) {
-    return {
-      level: 'energy-medium',
-      message: 'Rising energy - good for creative tasks',
-    };
-  } else {
-    return {
-      level: 'energy-low',
-      message: 'Rest and recovery time',
-    };
-  }
-});
-
-const currentEnergyLevel = computed(() => energyInfo.value.level);
 </script>
 
 <template>
-  <Panel :color="currentEnergyLevel" class="p-6 @container">
+  <Panel :color="energyStore.energyInfo.level" class="p-6 @container">
     <div
       class="flex items-center justify-center @max-[385px]:justify-start gap-6 text-4xl font-bold"
       :class="{
-        'text-white': currentEnergyLevel === 'energy-low' || currentEnergyLevel === 'energy-medium',
-        'text-black': currentEnergyLevel === 'energy-high',
+        'text-white':
+          energyStore.energyInfo.level === 'low' || energyStore.energyInfo.level === 'medium',
+        'text-black': energyStore.energyInfo.level === 'high',
       }"
     >
-      <Clock class="size-12 self-start" />
+      <Clock
+        class="size-12 self-start"
+        :class="{
+          'text-white':
+            energyStore.energyInfo.level === 'low' || energyStore.energyInfo.level === 'medium',
+          'text-black': energyStore.energyInfo.level === 'high',
+        }"
+      />
 
       <div class="flex flex-col">
         {{ formattedTime }}
@@ -111,7 +84,7 @@ const currentEnergyLevel = computed(() => energyInfo.value.level);
           {{ timeUntilEndOfWork.hours }}h {{ timeUntilEndOfWork.minutes }}m until end of work day
         </span>
 
-        <div class="text-lg">{{ energyInfo.message }}</div>
+        <div class="text-lg">{{ energyStore.energyInfo.message }}</div>
       </div>
     </div>
   </Panel>
