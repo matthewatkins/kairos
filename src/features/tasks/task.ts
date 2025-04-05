@@ -1,4 +1,5 @@
-export type EnergyLevel = 'high' | 'medium' | 'low';
+import type { EnergyLevel } from '@/features/energy/types';
+
 export type Context = 'work' | 'personal';
 
 export type WorkCategory = 'Deep work' | 'Collaboration' | 'Admin' | 'Creative';

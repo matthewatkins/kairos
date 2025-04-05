@@ -1,16 +1,18 @@
 <script setup lang="ts">
+import type { EnergyLevel } from '@/features/energy/types';
+
 type Props = {
-  color?: 'energy-high' | 'energy-medium' | 'energy-low' | 'default';
+  color?: EnergyLevel | 'default';
 };
 
 const { color = 'default' } = defineProps<Props>();
 
 const variants = {
-  'energy-high': 'bg-energy-high',
-  'energy-medium': 'bg-energy-medium',
-  'energy-low': 'bg-energy-low',
+  high: 'bg-energy-high',
+  medium: 'bg-energy-medium',
+  low: 'bg-energy-low',
   default: 'bg-white',
-};
+} as const;
 </script>
 
 <template>

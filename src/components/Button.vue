@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import type { Component } from 'vue';
+import type { EnergyLevel } from '@/features/energy/types';
 
 type Props = {
   variant?: 'primary' | 'outline' | 'link';
-  color?: 'default' | 'energy-high' | 'energy-medium' | 'energy-low';
+  color?: 'default' | EnergyLevel;
   icon?: Component;
 };
 
@@ -17,30 +18,26 @@ const buttonClasses = computed(() => {
   const variants = {
     primary: {
       default: 'bg-gray-dark text-white hover:bg-gray-darkest/90',
-      'energy-high': 'bg-energy-high text-white hover:bg-energy-high/90',
-      'energy-medium': 'bg-energy-medium text-white hover:bg-energy-medium/90',
-      'energy-low': 'bg-energy-low text-white hover:bg-energy-low/90',
+      high: 'bg-energy-high text-white hover:bg-energy-high/90',
+      medium: 'bg-energy-medium text-white hover:bg-energy-medium/90',
+      low: 'bg-energy-low text-white hover:bg-energy-low/90',
     },
     outline: {
       default: 'border border-gray-medium bg-transparent text-gray-dark hover:bg-gray-light',
-      'energy-high':
-        'border border-energy-high bg-transparent text-energy-high hover:bg-energy-high/10',
-      'energy-medium':
+      high: 'border border-energy-high bg-transparent text-energy-high hover:bg-energy-high/10',
+      medium:
         'border border-energy-medium bg-transparent text-energy-medium hover:bg-energy-medium/10',
-      'energy-low':
-        'border border-energy-low bg-transparent text-energy-low hover:bg-energy-low/10',
+      low: 'border border-energy-low bg-transparent text-energy-low hover:bg-energy-low/10',
     },
     link: {
       default:
         'bg-transparent text-gray-dark border-2 border-transparent hover:border-gray-dark hover:text-gray-darkest',
-      'energy-high':
-        'bg-transparent text-energy-high border-2 border-transparent hover:border-energy-high hover:text-energy-high/80',
-      'energy-medium':
+      high: 'bg-transparent text-energy-high border-2 border-transparent hover:border-energy-high hover:text-energy-high/80',
+      medium:
         'bg-transparent text-energy-medium border-2 border-transparent hover:border-energy-medium hover:text-energy-medium/80',
-      'energy-low':
-        'bg-transparent text-energy-low border-2 border-transparent hover:border-energy-low hover:text-energy-low/80',
+      low: 'bg-transparent text-energy-low border-2 border-transparent hover:border-energy-low hover:text-energy-low/80',
     },
-  };
+  } as const;
 
   return `${base} ${variants[props.variant || 'primary'][props.color || 'default']}`;
 });
