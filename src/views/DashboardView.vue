@@ -2,6 +2,7 @@
 import Panel from '@/components/Panel.vue';
 import ContextSwitcher from '@/features/context/ContextSwitcher.vue';
 import TaskList from '@/features/tasks/TasksList.vue';
+import ContextClock from '@/features/context-clock/Clock.vue';
 </script>
 
 <template>
@@ -19,9 +20,9 @@ import TaskList from '@/features/tasks/TasksList.vue';
       <p class="text-sm text-gray-dark">Your productivity patterns and optimal schedule</p>
     </div>
 
-    <Panel class="clock" color="energy-high">
-      <h2 class="text-xl font-bold">Clock</h2>
-    </Panel>
+    <!-- <Panel class="clock" color="energy-high"> -->
+    <ContextClock class="clock" />
+    <!-- </Panel> -->
 
     <Panel class="patterns">
       <h2 class="text-xl font-bold">Patterns</h2>
@@ -50,6 +51,7 @@ import TaskList from '@/features/tasks/TasksList.vue';
   flex-direction: column;
   gap: 20px 20px;
   padding-top: 100px;
+  padding-bottom: 150px;
 
   @media (min-width: 900px) {
     display: grid;
