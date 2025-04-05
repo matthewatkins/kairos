@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useContextStore } from '@/stores/context';
+import { useContextStore } from '@/features/context/store';
 import { Briefcase, Home } from 'lucide-vue-next';
 import { contextValues } from '@/features/context/context';
 import type { Context } from '@/features/context/context';

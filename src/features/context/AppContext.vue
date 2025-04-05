@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue';
-import { useContextStore } from '@/stores/context';
+import { useContextStore } from '@/features/context/store';
 
 const contextStore = useContextStore();
 

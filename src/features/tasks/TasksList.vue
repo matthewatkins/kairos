@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useTasksStore } from '@/stores/tasks';
-import { useContextStore } from '@/stores/context';
+import { useTasksStore } from '@/features/tasks/store';
+import { useContextStore } from '@/features/context/store';
 import TaskInput from './TaskInput.vue';
 import TaskItem from './TaskItem.vue';
 import Panel from '@/components/Panel.vue';

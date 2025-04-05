@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue';
-import { useContextStore } from '@/stores/context';
+import { useContextStore } from '@/features/context/store';
 import { contextValues } from '@/features/context/context';
 import { Clock } from 'lucide-vue-next';
 import Panel from '@/components/Panel.vue';
