@@ -4,6 +4,7 @@ import { useTasksStore } from '@/stores/tasks';
 import { useContextStore } from '@/stores/context';
 import TaskInput from './TaskInput.vue';
 import TaskItem from './TaskItem.vue';
+import Panel from '@/components/Panel.vue';
 
 const tasksStore = useTasksStore();
 const contextStore = useContextStore();
@@ -25,7 +26,7 @@ function handleAddTask(title: string) {
 </script>
 
 <template>
-  <div class="flex flex-col gap-6">
+  <Panel class="flex flex-col gap-6">
     <div>
       <h2 class="text-2xl font-bold">{{ currentContextLabel }} Tasks</h2>
       <p class="text-sm text-gray-dark">
@@ -45,5 +46,5 @@ function handleAddTask(title: string) {
         @toggle="tasksStore.toggleTaskCompletion(task.id)"
       />
     </div>
-  </div>
+  </Panel>
 </template>

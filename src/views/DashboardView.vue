@@ -10,9 +10,7 @@ import ContextClock from '@/features/context-clock/Clock.vue';
     <header class="header">
       <div class="brand flex items-center gap-2 text-2xl font-bold">Kairos</div>
 
-      <Panel class="context">
-        <ContextSwitcher />
-      </Panel>
+      <ContextSwitcher class="context" />
     </header>
 
     <div class="heading">
@@ -20,9 +18,7 @@ import ContextClock from '@/features/context-clock/Clock.vue';
       <p class="text-sm text-gray-dark">Your productivity patterns and optimal schedule</p>
     </div>
 
-    <!-- <Panel class="clock" color="energy-high"> -->
     <ContextClock class="clock" />
-    <!-- </Panel> -->
 
     <Panel class="patterns">
       <h2 class="text-xl font-bold">Patterns</h2>
@@ -32,9 +28,7 @@ import ContextClock from '@/features/context-clock/Clock.vue';
       <h2 class="text-xl font-bold">Recs</h2>
     </Panel>
 
-    <Panel class="tasks">
-      <TaskList />
-    </Panel>
+    <TaskList class="tasks" />
 
     <div class="footer p-4 text-sm text-gray-500 text-center">
       <p>&copy; {{ new Date().getFullYear() }} Kairos AI Corporation - All Rights Reserved</p>

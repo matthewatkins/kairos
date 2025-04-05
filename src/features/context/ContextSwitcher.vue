@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import Button from '@/components/Button.vue';
 import { useContextStore } from '@/stores/context';
 import { Briefcase, Home } from 'lucide-vue-next';
-import type { Context } from '@/features/context/context';
 import { contextValues } from '@/features/context/context';
+import type { Context } from '@/features/context/context';
+import Button from '@/components/Button.vue';
+import Panel from '@/components/Panel.vue';
 
 const contextStore = useContextStore();
 const contexts = computed(() => contextStore.contexts);
@@ -16,7 +17,7 @@ const icons = {
 </script>
 
 <template>
-  <div class="flex gap-2">
+  <Panel class="flex gap-2">
     <Button
       v-for="context in contexts"
       :key="context.name"
@@ -27,5 +28,5 @@ const icons = {
       <component :is="icons[context.name.toLowerCase() as keyof typeof icons]" />
       {{ context.name }}
     </Button>
-  </div>
+  </Panel>
 </template>
