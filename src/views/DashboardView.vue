@@ -3,6 +3,7 @@ import Panel from '@/components/Panel.vue';
 import ContextSwitcher from '@/features/context/ContextSwitcher.vue';
 import TaskList from '@/features/tasks/TasksList.vue';
 import ContextClock from '@/features/context-clock/Clock.vue';
+import RecsList from '@/features/energy-recommendations/RecsList.vue';
 </script>
 
 <template>
@@ -24,9 +25,7 @@ import ContextClock from '@/features/context-clock/Clock.vue';
       <h2 class="text-xl font-bold">Patterns</h2>
     </Panel>
 
-    <Panel class="recs">
-      <h2 class="text-xl font-bold">Recs</h2>
-    </Panel>
+    <RecsList class="recs" />
 
     <TaskList class="tasks" />
 
