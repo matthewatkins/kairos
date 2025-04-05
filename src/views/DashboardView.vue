@@ -14,7 +14,7 @@ import RecsList from '@/features/energy-recommendations/RecsList.vue';
       <ContextSwitcher class="context" />
     </header>
 
-    <div class="heading">
+    <div class="heading flex flex-col justify-end">
       <h1 class="text-xl font-bold">Energy Dashboard</h1>
       <p class="text-sm text-gray-dark">Your productivity patterns and optimal schedule</p>
     </div>
