@@ -56,7 +56,7 @@ const timeUntilEndOfWork = computed(() => {
 </script>
 
 <template>
-  <Panel :color="energyStore.energyInfo.level" class="p-6 @container">
+  <Panel :color="energyStore.energyInfo.level" class="p-6 @container shadow-top-sm md:shadow-sm">
     <div
       class="flex items-center justify-center @max-[385px]:justify-start gap-6 text-4xl font-bold"
       :class="{
