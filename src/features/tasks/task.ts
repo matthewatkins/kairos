@@ -1,6 +1,5 @@
 import type { EnergyLevel } from '@/features/energy/types';
-
-export type Context = 'work' | 'personal';
+import type { Context } from '@/features/context/context';
 
 export type WorkCategory = 'Deep work' | 'Collaboration' | 'Admin' | 'Creative';
 export type PersonalCategory =

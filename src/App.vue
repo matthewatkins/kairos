@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import AppContext from '@/features/context/AppContext.vue';
+import { useContextCheck } from '@/features/context/useContextCheck';
+
+useContextCheck();
 </script>
 
 <template>
-  <AppContext>
-    <router-view></router-view>
-  </AppContext>
+  <router-view />
 </template>
 
 <style></style>
