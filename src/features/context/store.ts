@@ -52,14 +52,14 @@ export const useContextStore = defineStore('context', {
       const hour = new Date().getHours();
       const day = new Date().getDay();
 
-      // After 6 PM, switch to personal context
-      if (hour >= 18 && this.current === contextValues.work) {
+      // After 5 PM, switch to personal context
+      if (hour >= 17 && this.current === contextValues.work) {
         this.setContext(contextValues.personal);
       }
-      // Between 9 AM and 6 PM on weekdays, switch to work context
+      // Between 9 AM and 5 PM on weekdays, switch to work context
       else if (
         hour >= 9 &&
-        hour < 18 &&
+        hour < 17 &&
         day !== 0 && // Not Sunday
         day !== 6 && // Not Saturday
         this.current === contextValues.personal
