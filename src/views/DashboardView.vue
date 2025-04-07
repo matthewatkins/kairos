@@ -4,12 +4,26 @@ import TaskList from '@/features/tasks/TasksList.vue';
 import ContextClock from '@/features/context-clock/Clock.vue';
 import RecsList from '@/features/energy/RecsList.vue';
 import Patterns from '@/features/patterns/Patterns.vue';
+import { useContextStore } from '@/features/context/store';
+import { useEnergyStore } from '@/features/energy/store';
+
+const contextStore = useContextStore();
+const energyStore = useEnergyStore();
+
+const colorVariants = {
+  high: 'text-energy-high',
+  medium: 'text-energy-medium',
+  low: 'text-energy-low',
+  default: 'text-white',
+} as const;
 </script>
 
 <template>
   <main class="dashboard mx-auto max-w-screen-2xl px-4 py-8">
     <header class="header">
-      <div class="brand flex items-center gap-2 text-2xl font-bold">Kairos</div>
+      <div class="brand text-3xl font-bold">
+        K<span :class="colorVariants[energyStore.energyInfo.level]">ai</span>ros
+      </div>
 
       <ContextSwitcher class="context" />
     </header>
