@@ -23,6 +23,7 @@ interface PatternsState {
   monthData: MonthPatternData[];
 }
 
+// NOTE: This data is fake, but would come from AI analysis of actual user data
 export const usePatternsStore = defineStore('patterns', {
   state: (): PatternsState => ({
     selectedRange: 'day',
