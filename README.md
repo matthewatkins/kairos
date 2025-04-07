@@ -1,8 +1,25 @@
 # Kairos Timekeeper Dashboard
 
-Kairos is an AI enhanced timekeeping application that differentiates itself by using energy levels as it's main mechanic.
+Kairos is an AI enhanced timekeeping application that differentiates itself by using energy levels as it's main mechanic as opposed to regular clock based time.
+
+This project is simply the **dashboard** part of what would be a larger application.
 
 ## Features
+
+_All data is faked_
+
+This dashboard includes:
+
+- AI adapted context modes for showing appropriate tasks. These contexts are simplified down to "work" and "personal" modes.
+- Context-Aware Time. Time display changes based on location, activity, and priorities. Shows current energy level with visual color indication.
+  - In work context: shows project deadlines and meeting countdowns
+  - In personal context: shows family events and personal goals
+  - AI transitions between contexts automatically
+- Suggested task list based on current energy level.
+- Energy patterns
+  - This includes a chart showing productivity cycles with day, week, and month views. These cycles are AI driven data assessed from actual patterns.
+  - AI suggested times and scheduling based on user patterns and energy levels.
+- Task list showing all current tasks based on the currenly assessed context. Includes the ability to quickly add new tasks to that context.
 
 ## Tech Stack
 
@@ -17,7 +34,7 @@ Kairos is an AI enhanced timekeeping application that differentiates itself by u
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js (v18.3 or higher for vue)
 - npm (v7 or higher)
 
 ### Installation
@@ -48,16 +65,23 @@ npm run build
 
 The built files will be in the `dist` directory.
 
+To view the production build:
+
+```bash
+npm run preview
+```
+
 ## Project Structure
 
 ```
 src/
-├── components/     # Reusable Vue components
-├── views/         # Page components
-├── stores/        # Pinia stores
 ├── assets/        # Static assets
-├── types/         # TypeScript type definitions
-└── utils/         # Utility functions
+├── components/    # Reusable Vue components - mostly global UI components
+├── features/      # App features including related types, stores, components, etc...
+├── router/        # App routes
+├── stores/        # Global Pinia stores
+├── styles/        # Global styles and Tailwind CSS config
+├── views/         # Page components
 ```
 
 ## Development Guidelines
@@ -66,4 +90,7 @@ src/
 - Follow Vue 3 Composition API patterns
 - Use Pinia stores for state management
 - Keep components focused and reusable
+- Components that are specific to a feature should be
+  included with the feature, not global components
 - Use scoped styles for component-specific CSS
+- Opt for Tailwind CSS over scoped styles
