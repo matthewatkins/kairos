@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Coffee, Brain, Zap } from 'lucide-vue-next';
-import type { EnergyLevel } from './types';
+import type { EnergyLevel } from '@/features/energy/types';
 
 type Props = {
   level: EnergyLevel;
