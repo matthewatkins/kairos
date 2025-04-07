@@ -13,11 +13,21 @@ import {
   Legend,
   ChartData,
   ChartOptions,
+  Filler,
 } from 'chart.js';
 import Button from '@/components/Button.vue';
 import Select from '@/components/Select.vue';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
 
 const patternsStore = usePatternsStore();
 
@@ -60,7 +70,7 @@ const chartData = computed<ChartData<'line'>>(() => {
         borderColor: metric.color,
         data: data.map(d => d[patternsStore.selectedMetric]),
         tension: 0.4,
-        fill: true,
+        fill: 'start',
         backgroundColor: metric.backgroundColor,
       },
     ],
