@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Panel from '@/components/Panel.vue';
 import ContextSwitcher from '@/features/context/ContextSwitcher.vue';
 import TaskList from '@/features/tasks/TasksList.vue';
 import ContextClock from '@/features/context-clock/Clock.vue';
-import RecsList from '@/features/energy-recommendations/RecsList.vue';
+import RecsList from '@/features/energy/RecsList.vue';
+import Patterns from '@/features/patterns/Patterns.vue';
 </script>
 
 <template>
@@ -21,9 +21,7 @@ import RecsList from '@/features/energy-recommendations/RecsList.vue';
 
     <ContextClock class="clock" />
 
-    <Panel class="patterns">
-      <h2 class="text-xl font-bold">Patterns</h2>
-    </Panel>
+    <Patterns class="patterns" />
 
     <RecsList class="recs" />
 
@@ -49,8 +47,6 @@ import RecsList from '@/features/energy-recommendations/RecsList.vue';
   @media (min-width: 900px) {
     display: grid;
     grid-template-columns: var(--columns);
-    /* grid-template-rows: 0.3fr 0.5fr 1fr 1fr 0.5fr; */
-    /* grid-auto-rows: 1fr; */
     grid-auto-flow: column;
     grid-template-areas:
       'header header'
