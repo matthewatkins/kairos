@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import type { Task } from '@/features/tasks/task';
+import type { Task } from '@/features/tasks/types';
 import { useContextStore } from '../context/store';
 import { allTasks } from '@/features/tasks/mockTasks';
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Clock } from 'lucide-vue-next';
 import Badge from '@/features/tasks/EnergyBadge.vue';
-import type { Task } from './task';
+import type { Task } from './types';
 
 type Props = {
   task: Task;

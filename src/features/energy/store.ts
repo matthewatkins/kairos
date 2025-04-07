@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { useTasksStore } from '@/features/tasks/store';
 import { Zap, Coffee, Brain } from 'lucide-vue-next';
-import type { Task } from '@/features/tasks/task';
+import type { Task } from '@/features/tasks/types';
 import type { EnergyLevel, EnergyStyle, EnergyInfo, EnergyState } from './types';
 
 const energyStyles: Record<EnergyLevel, EnergyStyle> = {

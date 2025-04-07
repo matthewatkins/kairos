@@ -1,4 +1,4 @@
-import type { Task } from '@/features/tasks/task';
+import type { Task } from '@/features/tasks/types';
 
 export const allTasks: Task[] = [
   {
