@@ -8,6 +8,11 @@ const router = createRouter({
       name: 'dashboard',
       component: () => import('../views/DashboardView.vue'),
     },
+    {
+      path: '/figma',
+      name: 'figma',
+      component: () => import('../views/FigmaView.vue'),
+    },
   ],
 });
 

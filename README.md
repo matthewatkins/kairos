@@ -4,6 +4,10 @@ Kairos is an AI enhanced timekeeping application that differentiates itself by u
 
 This project is simply the **dashboard** part of what would be a larger application.
 
+## Design
+
+This app has been designed in Figma. Once the app is running locally, figma files can be viewed at `http://localhost:5173/figma`
+
 ## Features
 
 _All data is faked_
