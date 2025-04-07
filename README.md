@@ -12,7 +12,6 @@ Kairos is an AI enhanced timekeeping application that differentiates itself by u
 - Vue Router for navigation
 - Vite for build tooling
 - Tailwind CSS for styling
-- Reka UI for unstyled headless components
 
 ## Getting Started
 
