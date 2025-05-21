@@ -9,5 +9,13 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, './src'),
     },
-  }
+  },
+  css: {
+    postcss: {
+      plugins: [
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ],
+    },
+  },
 });
