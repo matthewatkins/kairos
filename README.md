@@ -1,8 +1,10 @@
 # Kairos Timekeeper Dashboard
 
-Kairos is an AI enhanced timekeeping application that differentiates itself by using energy levels as it's main mechanic as opposed to regular clock based time. In ancient Greek Kairos means 'the right or critical moment'. Therfore this app suggests the right task or activity at the right time for a users current energy.
+🚨 NOTE: This project was built as a demonstration for a job interview process. It is not a production application.
 
-This project is simply the **dashboard** part of what would be a larger application.
+Kairos is an AI-enhanced timekeeping application that differentiates itself by using energy levels as its main mechanic rather than traditional clock-based time. In ancient Greek, Kairos means 'the right or critical moment'. Therefore, this app suggests the right task or activity at the right time based on a user's current energy level.
+
+This project represents the **dashboard** component of what would be a larger application.
 
 ## Design
 
