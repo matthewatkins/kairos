@@ -8,10 +8,6 @@ Kairos is an AI-enhanced timekeeping application that differentiates itself by u
 
 This project represents the **dashboard** component of what would be a larger application.
 
-## Design
-
-This app has been designed in Figma. Once the app is running locally, figma files can be viewed at `http://localhost:5173/figma`
-
 ## Features
 
 _All data is faked_
@@ -27,7 +23,7 @@ This dashboard includes:
 - Energy patterns
   - This includes a chart showing productivity cycles with day, week, and month views. These cycles are AI driven data assessed from actual patterns.
   - AI suggested times and scheduling based on user patterns and energy levels.
-- Task list showing all current tasks based on the currenly assessed context. Includes the ability to quickly add new tasks to that context.
+- Task list showing all current tasks based on the currently assessed context. Includes the ability to quickly add new tasks to that context.
 
 ## Tech Stack
 
