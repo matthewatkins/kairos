@@ -2,7 +2,7 @@
 
 🚨 NOTE: This project was built as a demonstration for a job interview process. It is not a production application.
 
-[A hosted version of this can be found here](https://stackblitz.com/~/github.com/matthewatkins/kairos)
+[A hosted version of this can be found here](https://kairos-lj34--5173--96435430.local-credentialless.webcontainer.io/)
 
 Kairos is an AI-enhanced timekeeping application that differentiates itself by using energy levels as its main mechanic rather than traditional clock-based time. In ancient Greek, Kairos means 'the right or critical moment'. Therefore, this app suggests the right task or activity at the right time based on a user's current energy level.
 
